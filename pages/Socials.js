@@ -1,5 +1,5 @@
 import styles from '../styles/Home.module.css'
-import Image from 'next/Image'
+import Image from 'next/image'
 
 const Socials = ({ data = [] }) => (
   <section className={styles.socials}>
