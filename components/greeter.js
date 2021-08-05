@@ -5,7 +5,6 @@ const secondsInDay = 1000 * 60 * 60 * 24
 
 const Greeter = ({ text }) => {
   const [ lastVisit, setLastVisit ] = useLocalStorage('last-visit')
-  console.log(lastVisit)
   const [ greeting, setGreeting ] = useState('')
   useEffect(() => {
     const revisit = lastVisit && secondsInDay > Date.now() - +lastVisit
