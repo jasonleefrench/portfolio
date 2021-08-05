@@ -7,7 +7,7 @@ const Socials = ({ data = [] }) => (
     <div className={styles.holder}>
       {data.map(({ image, link, alt }, key) => (
         <a key={key} href={link}>
-          <Image src={image} alt={alt} />
+          <Image src={image} alt={alt} width={48} height={40} />
         </a>
       ))}
     </div>
