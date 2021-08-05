@@ -96,7 +96,7 @@
         },
         {
           "type": "text",
-          "value": "I charted the change in some of the most important economic indicators using <a href='https://d3js.org/'>D3.js</a>"
+          "value": "I charted the change in some of the most important economic indicators using D3.js."
         },
         {
           "type": "image",
