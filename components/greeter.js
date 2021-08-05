@@ -16,8 +16,8 @@ const Greeter = ({ text }) => {
     setGreeting(greeting)
     setLastVisit(+Date.now())
   }, [ lastVisit, setLastVisit ])
-  const editable = text.match(/{(\w+)}/)[1]
-  const __html = text.split(/{(\w+)}/)
+  const editable = text.match(/{(.+)}/)[1]
+  const __html = text.split(/{(.+)}/)
     .map((str, index) => index === 1 ? greeting : str)
     .join('')
   return __html && <span dangerouslySetInnerHTML={{__html}} />
