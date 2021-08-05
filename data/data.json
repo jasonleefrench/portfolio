@@ -2,7 +2,7 @@
   "intro": {
     "header": {
       "type": "greeter",
-      "text": "{Hello}!<span>My name is jason</span>"
+      "text": "{Hello!}<span>My name is jason</span>"
     },
     "descriptions": [
       "I'm a journalist/web developer/designer. ",
