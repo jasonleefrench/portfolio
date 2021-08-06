@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
 import useLocalStorage from '../hooks/useLocalStorage'
 
-const secondsInDay = 1000 * 60 * 60 * 24
+const secondsInHalfDay = (1000 * 60 * 60 * 24) / 2
 
 const Greeter = ({ text }) => {
   const [ lastVisit, setLastVisit ] = useLocalStorage('last-visit')
   const [ greeting, setGreeting ] = useState('')
   useEffect(() => {
-    const revisit = lastVisit && secondsInDay > Date.now() - +lastVisit
+    const revisit = lastVisit && (secondsInHalfDay > Date.now() - +lastVisit)
     const hours = new Date().getHours()
     const greeting = revisit ? 'Hi again!' :
       hours < 12 ? 'Good morning!' :
