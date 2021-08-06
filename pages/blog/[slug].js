@@ -1,7 +1,7 @@
 import groq from 'groq'
 import imageUrlBuilder from '@sanity/image-url'
 import BlockContent from '@sanity/block-content-to-react'
-import FourOhFour from '../FourOhFour'
+import FourOhFour from '../404'
 import Header from '../../components/header'
 import client from '../../client'
 import { prettyDate } from '../../utils'
@@ -51,7 +51,8 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
 
 Post.getInitialProps = async context => {
   const { slug = "" } = context.query
-  return await client.fetch(query, { slug })
+  const res = await client.fetch(query, { slug })
+  return res ? res : {}
 }
 
 export default Post
