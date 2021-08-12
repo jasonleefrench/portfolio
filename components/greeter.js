@@ -20,7 +20,7 @@ const Greeter = ({ text }) => {
   const __html = text.split(/{(.+)}/)
     .map((str, index) => index === 1 ? greeting : str)
     .join('')
-  return __html && <span dangerouslySetInnerHTML={{__html}} />
+  return <span className='greeter' dangerouslySetInnerHTML={{__html}} />
 }
 
 export default Greeter
