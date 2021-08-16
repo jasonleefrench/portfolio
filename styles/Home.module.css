@@ -24,6 +24,7 @@
 
 .title span {
   display: block;
+  min-height: 1.1em;
 }
 
 .description {
