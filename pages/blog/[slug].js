@@ -8,6 +8,21 @@ import { prettyDate } from "../../utils"
 
 const urlFor = source => imageUrlBuilder(client).image(source)
 
+const getReadingTime = body => {
+  const wordCount = getWordCount(body)
+  const minutes = Math.floor(wordCount / 200)
+  return minutes < 1 ? `Less than 1 minute` :
+   minutes === 1 ? `${minutes} minute` :
+   `${minutes} minutes`
+}
+
+const getWordCount = blocks => blocks.reduce((acc, item) => {
+  if(item.children) {
+    return acc + getWordCount(item.children)
+  }
+  return item.text ? acc + item.text.split(' ').length : acc
+}, 0)
+
 const serializers = {
   types: {
     code: props => (
@@ -34,7 +49,7 @@ const Post = ({ title = "404", published = "", body = [], siblings = [] }) => (
     {body.length ?
       <article className="post">
         <h1 className="post-title">{title}</h1>
-        <p className="post-meta">{prettyDate(published)}</p>
+        <p className="post-meta">{prettyDate(published)}. {getReadingTime(body)} read</p>
         <BlockContent
           blocks={body}
           imageOptions={{ fit: "max" }}
