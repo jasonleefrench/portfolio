@@ -1,10 +1,10 @@
-import groq from 'groq'
-import imageUrlBuilder from '@sanity/image-url'
-import BlockContent from '@sanity/block-content-to-react'
-import FourOhFour from '../404'
-import Header from '../../components/header'
-import client from '../../client'
-import { prettyDate } from '../../utils'
+import groq from "groq"
+import imageUrlBuilder from "@sanity/image-url"
+import BlockContent from "@sanity/block-content-to-react"
+import FourOhFour from "../404"
+import Header from "../../components/header"
+import client from "../../client"
+import { prettyDate } from "../../utils"
 
 const urlFor = source => imageUrlBuilder(client).image(source)
 
@@ -24,7 +24,11 @@ const serializers = {
   }
 }
 
-const Post = ({ title = '404', published = '', body = [] }) => (
+const SiblingLink = ({ type, title, slug }) => (
+  <p>{type} post: <a href={slug}>{title}</a></p>
+)
+
+const Post = ({ title = "404", published = "", body = [], siblings = [] }) => (
   <div className="wrapper">
     <Header title={title} />
     {body.length ?
@@ -33,26 +37,56 @@ const Post = ({ title = '404', published = '', body = [] }) => (
         <p className="post-meta">{prettyDate(published)}</p>
         <BlockContent
           blocks={body}
-          imageOptions={{ fit: 'max' }}
+          imageOptions={{ fit: "max" }}
           serializers={serializers}
           {...client.config()}
         />
-        <p className="end">✨</p>
+        <p className="end">✨💕✨</p>
+        {siblings
+          .filter(({ slug }) => slug)
+          .map(({ type, title, slug }, index) =>
+            <SiblingLink key={index} type={type} title={title} slug={slug} />
+          )
+        }
       </article> :
       <FourOhFour></FourOhFour>}
   </div>
 )
 
-const query = groq`*[_type == "post" && slug.current == $slug][0]{
+const postQuery = groq`*[_type == "post" && slug.current == $slug][0]{
   title,
   body,
-  published
+  published,
+  _updatedAt
 }`
+
+const siblingPostQueries = [
+  { type: "previous", input: "dateTime(_updatedAt) > dateTime($updated)" },
+  { type: "next", input: "dateTime(_updatedAt) < dateTime($updated)" }
+].map(({ type, input }) => ({
+  query: groq`*[_type == "post" && ${input}][0]{ slug, title }`,
+  type
+}))
+
+const getSiblings = async updated => await Promise.all(
+  siblingPostQueries.map(
+    async ({ query, type }) => {
+      const res = await client.fetch(query, { updated })
+      return {
+        slug: res?.slug?.current,
+        title: res?.title,
+        type
+      }
+    }
+  )
+)
 
 Post.getInitialProps = async context => {
   const { slug = "" } = context.query
-  const res = await client.fetch(query, { slug })
-  return res ? res : {}
+  const res = await client.fetch(postQuery, { slug })
+  if(!res) { return {} }
+  const siblings = await getSiblings(res._updatedAt)
+  return { ...res, siblings }
 }
 
 export default Post
