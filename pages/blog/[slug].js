@@ -47,8 +47,7 @@ const SiblingLink = ({ type, title, slug }) => (
   <p>{type} post: <a href={slug}>{title}</a></p>
 )
 
-const Post = ({ title = "404", published = "", body = [], siblings = [] }) => {
-  return (
+const Post = ({ title = "404", published = "", body = [], siblings = [] }) => (
     <div className="wrapper">
       <Header title={title} />
       <Script src="/js/highlight.min.js"></Script>
@@ -73,27 +72,36 @@ const Post = ({ title = "404", published = "", body = [], siblings = [] }) => {
         <FourOhFour></FourOhFour>}
     </div>
   )
-}
 
 const postQuery = groq`*[_type == "post" && slug.current == $slug][0]{
   title,
   body,
-  published,
-  _updatedAt
+  published
 }`
 
 const siblingPostQueries = [
-  { type: "previous", input: "dateTime(_updatedAt) > dateTime($updated)" },
-  { type: "next", input: "dateTime(_updatedAt) < dateTime($updated)" }
-].map(({ type, input }) => ({
-  query: groq`*[_type == "post" && ${input}][0]{ slug, title }`,
+  {
+    type: "previous",
+    input: "dateTime(published) < dateTime($published)",
+    order: "desc"
+  },
+  {
+    type: "next",
+    input: "dateTime(published) > dateTime($published)",
+    order: "asc"
+  }
+].map(({ type, input, order }) => ({
+  query:
+    groq`*[_type == "post" && ${input}]{
+      slug, title, published
+    }| order(published ${order})[0]`,
   type
 }))
 
-const getSiblings = async updated => await Promise.all(
+const getSiblings = async published => await Promise.all(
   siblingPostQueries.map(
     async ({ query, type }) => {
-      const res = await client.fetch(query, { updated })
+      const res = await client.fetch(query, { published })
       return {
         slug: res?.slug?.current,
         title: res?.title,
@@ -107,7 +115,7 @@ Post.getInitialProps = async context => {
   const { slug = "" } = context.query
   const res = await client.fetch(postQuery, { slug })
   if(!res) { return {} }
-  const siblings = await getSiblings(res._updatedAt)
+  const siblings = await getSiblings(res.published)
   return { ...res, siblings }
 }
 
