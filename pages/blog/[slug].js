@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import groq from "groq"
 import imageUrlBuilder from "@sanity/image-url"
 import BlockContent from "@sanity/block-content-to-react"
@@ -26,8 +27,10 @@ const getWordCount = blocks => blocks.reduce((acc, item) => {
 const serializers = {
   types: {
     code: props => (
-      <pre data-language={props.node.language}>
-        <code>{props.node.code}</code>
+      <pre>
+        <code className={`language-${props.node.language}`}>
+          {props.node.code}
+        </code>
       </pre>
     ),
     script: props => (
@@ -43,30 +46,33 @@ const SiblingLink = ({ type, title, slug }) => (
   <p>{type} post: <a href={slug}>{title}</a></p>
 )
 
-const Post = ({ title = "404", published = "", body = [], siblings = [] }) => (
-  <div className="wrapper">
-    <Header title={title} />
-    {body.length ?
-      <article className="post">
-        <h1 className="post-title">{title}</h1>
-        <p className="post-meta">{prettyDate(published)}. {getReadingTime(body)} read</p>
-        <BlockContent
-          blocks={body}
-          imageOptions={{ fit: "max" }}
-          serializers={serializers}
-          {...client.config()}
-        />
-        <p className="end">✨💕✨</p>
-        {siblings
-          .filter(({ slug }) => slug)
-          .map(({ type, title, slug }, index) =>
-            <SiblingLink key={index} type={type} title={title} slug={slug} />
-          )
-        }
-      </article> :
-      <FourOhFour></FourOhFour>}
-  </div>
-)
+const Post = ({ title = "404", published = "", body = [], siblings = [] }) => {
+  useEffect(() => hljs.highlightAll(), [])
+  return (
+    <div className="wrapper">
+      <Header title={title} />
+      {body.length ?
+        <article className="post">
+          <h1 className="post-title">{title}</h1>
+          <p className="post-meta">{prettyDate(published)}. {getReadingTime(body)} read</p>
+          <BlockContent
+            blocks={body}
+            imageOptions={{ fit: "max" }}
+            serializers={serializers}
+            {...client.config()}
+          />
+          <p className="end">✨💕✨</p>
+          {siblings
+            .filter(({ slug }) => slug)
+            .map(({ type, title, slug }, index) =>
+              <SiblingLink key={index} type={type} title={title} slug={slug} />
+            )
+          }
+        </article> :
+        <FourOhFour></FourOhFour>}
+    </div>
+  )
+}
 
 const postQuery = groq`*[_type == "post" && slug.current == $slug][0]{
   title,
