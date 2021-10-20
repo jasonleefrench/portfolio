@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import groq from "groq"
 import imageUrlBuilder from "@sanity/image-url"
+import Script from 'next/script'
 import BlockContent from "@sanity/block-content-to-react"
 import FourOhFour from "../404"
 import Header from "../../components/header"
@@ -47,10 +48,10 @@ const SiblingLink = ({ type, title, slug }) => (
 )
 
 const Post = ({ title = "404", published = "", body = [], siblings = [] }) => {
-  useEffect(() => hljs.highlightAll(), [])
   return (
     <div className="wrapper">
       <Header title={title} />
+      <Script src="/js/highlight.min.js"></Script>
       {body.length ?
         <article className="post">
           <h1 className="post-title">{title}</h1>

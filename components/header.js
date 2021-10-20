@@ -30,7 +30,6 @@ const Header = ({ title }) => (
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'UA-109318900-3');`}} />
-    <Script src="/js/highlight.min.js"></Script>
   </Head>
 )
 
