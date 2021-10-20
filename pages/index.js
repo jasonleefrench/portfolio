@@ -21,10 +21,12 @@ const Home = () => (
       <link href='https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap' rel='stylesheet' />
     </Head>
     <Intro data={data.intro} />
-    <Projects data={data.projects} />
-    <Skills data={data.skills} />
-    <Socials data={data.socials} />
-    <footer className={styles.footer}>Made with ❤️</footer>
+    <article>
+      <Projects data={data.projects} />
+      <Skills data={data.skills} />
+      <Socials data={data.socials} />
+    </article>
+    <footer className={styles.footer}>❤️</footer>
   </div>
 )
 
