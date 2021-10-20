@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Script from 'next/script'
 
 const Header = ({ title }) => (
   <Head>
@@ -29,7 +30,7 @@ const Header = ({ title }) => (
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'UA-109318900-3');`}} />
-    <script src="/js/highlight.min.js"></script>
+    <Script src="/js/highlight.min.js"></Script>
   </Head>
 )
 
