@@ -5,7 +5,8 @@
       "text": "<span>{Hello!}</span><span>My name is jason</span>"
     },
     "descriptions": [
-      "I'm a journalist/web developer/designer. ",
+      "I'm a journalist/web developer/designer.",
+      "My goal in life is to <a href='/blog'>blog</a> <em>more</em> and <a href='https://twitter.com/jasonleefrench'>tweet</a> classic Simpsons quotes <em>less</em>.",
       "I work as a graphics reporter at the <a href='https://twitter.com/WSJGraphics'>Wall Street Journal</a>. I craft clean code to build interactive graphics and tools.",
       "Telling stories is a blast!",
       {
