@@ -13,17 +13,20 @@ const urlFor = source => imageUrlBuilder(client).image(source)
 const getReadingTime = body => {
   const wordCount = getWordCount(body)
   const minutes = Math.floor(wordCount / 200)
-  return minutes < 1 ? `Less than 1 minute` :
-   minutes === 1 ? `${minutes} minute` :
-   `${minutes} minutes`
+  return minutes < 1 ? `Less than 1 minute` : `${minutes} minute`
 }
 
-const getWordCount = blocks => blocks.reduce((acc, item) => {
-  if(item.children) {
-    return acc + getWordCount(item.children)
-  }
-  return item.text ? acc + item.text.split(' ').length : acc
-}, 0)
+const getWordCount = (blocks) =>
+  blocks.reduce((acc, item) => {
+    if (item.children) {
+      return acc + getWordCount(item.children);
+    }
+    return item._type === 'code'
+      ? acc + item.code.split(' ').length
+      : item.text
+      ? acc + item.text.split(' ').length
+      : acc;
+  }, 0);
 
 const serializers = {
   types: {
