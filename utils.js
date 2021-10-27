@@ -5,4 +5,6 @@ const prettyDate = date => new Date(date).toLocaleDateString('en-gb', {
   day: 'numeric'
 })
 
-export { prettyDate }
+const prettyTitle = title => title.split('-').join(' ')
+
+export { prettyDate, prettyTitle }

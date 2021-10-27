@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import groq from "groq"
 import imageUrlBuilder from "@sanity/image-url"
 import Script from 'next/script'
+import Link from 'next/link'
 import BlockContent from "@sanity/block-content-to-react"
 import FourOhFour from "../404"
 import Header from "../../components/header"
@@ -50,7 +51,9 @@ const SiblingLink = ({ type, title, slug }) => (
   <p>{type} post: <a href={slug}>{title}</a></p>
 )
 
-const Post = ({ title = "404", published = "", body = [], siblings = [] }) => (
+const Post = ({
+  title = "404", published = "", body = [], siblings = [], categories = []
+}) => (
     <div className="wrapper">
       <Header title={title} />
       <Script src="/js/highlight.min.js"></Script>
@@ -58,6 +61,13 @@ const Post = ({ title = "404", published = "", body = [], siblings = [] }) => (
         <article className="post">
           <h1 className="post-title">{title}</h1>
           <p className="post-meta">{prettyDate(published)}. {getReadingTime(body)} read</p>
+          <p className="post-meta">
+            Categories: {categories.map(
+              ({ title, slug }) => <Link href={`categories/${slug}`}>
+                <a>{title}</a>
+              </Link>)
+            }
+          </p>
           <BlockContent
             blocks={body}
             imageOptions={{ fit: "max" }}
@@ -79,7 +89,8 @@ const Post = ({ title = "404", published = "", body = [], siblings = [] }) => (
 const postQuery = groq`*[_type == "post" && slug.current == $slug][0]{
   title,
   body,
-  published
+  published,
+  categories[]->{title, 'slug': slug.current}
 }`
 
 const siblingPostQueries = [
@@ -96,7 +107,7 @@ const siblingPostQueries = [
 ].map(({ type, input, order }) => ({
   query:
     groq`*[_type == "post" && ${input}]{
-      slug, title, published
+      slug, title, published,
     }| order(published ${order})[0]`,
   type
 }))

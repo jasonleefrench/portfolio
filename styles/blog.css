@@ -1,3 +1,8 @@
+body {
+  color: #2f3640;
+  -webkit-font-smoothing: antialiased;
+}
+
 .wrapper .post-title, ul {
   padding: 0;
 }
@@ -50,10 +55,9 @@ a {
   color: #2a7ae2;
   text-decoration: none; }
   a:visited {
-    color: #1756a9; }
+    color: #00a8ff; }
   a:hover {
-    color: #111;
-    text-decoration: underline; }
+    color: #2f3640; }
   .social-media-list a:hover {
     text-decoration: none; }
     .social-media-list a:hover .username {
@@ -344,4 +348,13 @@ h1 {
   font-size: 42px;
   line-height: 1;
   letter-spacing: -1px;
+}
+
+.list {
+  list-style: none;
+  margin-left: 0;
+}
+
+.list h2 {
+  margin-top: 0;
 }
