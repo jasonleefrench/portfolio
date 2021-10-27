@@ -41,7 +41,6 @@ const categoryQuery =
 Category.getInitialProps = async context => {
   const { category = "" } = context.query
   const res = await client.fetch(categoryQuery, { category })
-  console.log(res)
   return res || {}
 }
 

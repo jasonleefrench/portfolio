@@ -63,10 +63,12 @@ const Post = ({
           <p className="post-meta">{prettyDate(published)}. {getReadingTime(body)} read</p>
           <p className="post-meta">
             Categories: {categories.map(
-              ({ title, slug }) => <Link href={`categories/${slug}`}>
-                <a>{title}</a>
-              </Link>)
-            }
+              ({ title, slug }, index) => (
+                <Link href={`categories/${slug}`} key={index}>
+                  <a>{title}</a>
+                </Link>
+              )
+            )}
           </p>
           <BlockContent
             blocks={body}
