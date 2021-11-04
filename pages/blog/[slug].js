@@ -29,6 +29,8 @@ const getWordCount = (blocks) =>
       : acc;
   }, 0);
 
+// <iframe width="560" height="315" src="https://www.youtube.com/embed/85OjZr-3tTU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 const serializers = {
   types: {
     code: props => (
@@ -43,7 +45,20 @@ const serializers = {
     ),
     div: props => (
       <div id={props.node.id}></div>
-    )
+    ),
+    youtube: props => {
+      const code = props.node.href.split('?v=')[1]
+      return (
+        <iframe
+          width='100%'
+          height='500'
+          src={`https://www.youtube.com/embed/${code}`}
+          frameborder='0'
+          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+          allowfullscreen
+        ></iframe>
+      )
+    }
   }
 }
 
