@@ -1,158 +1,158 @@
 {
-  "intro": {
-    "header": {
-      "type": "greeter",
-      "text": "<span>{Hello!}</span><span>My name is jason</span>"
+    "intro": {
+        "header": {
+            "type": "greeter",
+            "text": "<span>{Hello!}</span><span>My name is jason</span>"
+        },
+        "descriptions": [
+            "I'm a journalist/web developer/designer.",
+            "My goal in life is to <a href='/blog'>blog</a> <em>more</em> and <a href='https://twitter.com/jasonleefrench'>tweet</a> classic Simpsons&nbsp;quotes&nbsp;<em>less</em>.",
+            "I work as a graphics reporter at the <a href='https://twitter.com/WSJGraphics'>Wall Street Journal</a>. I craft clean code to build interactive graphics and tools.",
+            "Telling stories is a blast!",
+            {
+                "type": "scrollTo",
+                "text": "I've listed a few of graphics and other things I've made below, but feel free to skip past to my {skills}!",
+                "selector": "#skills"
+            }
+        ]
     },
-    "descriptions": [
-      "I'm a journalist/web developer/designer.",
-      "My goal in life is to <a href='/blog'>blog</a> <em>more</em> and <a href='https://twitter.com/jasonleefrench'>tweet</a> classic Simpsons quotes <em>less</em>.",
-      "I work as a graphics reporter at the <a href='https://twitter.com/WSJGraphics'>Wall Street Journal</a>. I craft clean code to build interactive graphics and tools.",
-      "Telling stories is a blast!",
-      {
-        "type": "scrollTo",
-        "text": "I've listed a few of graphics and other things I've made below, but feel free to skip past to my {skills}!",
-        "selector": "#skills"
-      }
+    "projects": [
+        {
+            "title": "Covid-19 Battle to Intensify as Winter Sets In",
+            "link": "https://www.wsj.com/articles/covid-19-battle-to-intensify-as-winter-sets-in-11602840602",
+            "description": [
+                {
+                    "type": "text",
+                    "value": "Rising Covid-19 caseloads had public health authorities on high alert as the northern hemisphere headed into Winter 2020. One hopeful sign: the southern hemisphere experienced a mild flu season, easing seasonal pressure on hospitals."
+                },
+                {
+                    "type": "text",
+                    "value": "To show the change in rates of flu, I designed and developed a series of animated maps. The maps are also scrubbable so readers can flick through the maps at their own pace."
+                },
+                {
+                    "type": "image",
+                    "value": "/images/covid-map.gif",
+                    "classes": "big",
+                    "alt": "covid map"
+                }
+            ]
+        },
+        {
+            "title": "Tools",
+            "description": [
+                {
+                    "type": "text",
+                    "value": "I develop tools that help graphics editors and reporters to produce stunning visuals."
+                },
+                {
+                    "type": "text",
+                    "value": "For example, reporters were spending ages combing the ECDC to get daily COVID figures. I made a tool that scrapes and saves the data to a MySQL database, ready for download at the click of a button."
+                },
+                {
+                    "type": "text",
+                    "value": "Or, for busy markets days, I developed an app editors could use to create trading charts for markets stories."
+                },
+                {
+                    "type": "image",
+                    "value": "/images/markets-dailies.png",
+                    "alt": "markets dailies"
+                }
+            ]
+        },
+        {
+            "title": "Europe Got Covid Largely Under Control in the Summer. What Went Wrong?",
+            "link": "https://www.wsj.com/graphics/europe-covid-summer-what-went-wrong",
+            "description": [
+                {
+                    "type": "text",
+                    "value": "The second wave of the COVID crisis hit Europe harder than the first. Policymakers scrambled to keep the virus controlled until  vaccine rollotut, as people returned to their day-to-day lives."
+                },
+                {
+                    "type": "image",
+                    "value": "/images/covid-what-went-wrong.png",
+                    "alt": "covid what went wrong"
+                },
+                {
+                    "type": "text",
+                    "value": "Using d3.js, I build a side-by-side view of Europe, showing clearly how the virus took hold during the second wave."
+                },
+                {
+                    "type": "text",
+                    "value": "I also built out a chart showing the huge spike in cases, and was the main developer for the article."
+                },
+                {
+                    "type": "image",
+                    "value": "/images/covid-line.gif",
+                    "alt": "covid line"
+                }
+            ]
+        },
+        {
+            "title": "How Brexit Has Affected Markets",
+            "link": "https://www.wsj.com/graphics/what-brexit-politics-mean-for-markets/",
+            "description": [
+                {
+                    "type": "text",
+                    "value": "Since 2016 referendum, Brexit has a huge effect on the economy. The Bank of England has raised interest rates, the pound is weak against the dollar, and growth has slowed."
+                },
+                {
+                    "type": "text",
+                    "value": "I charted the change in some of the most important economic indicators using D3.js."
+                },
+                {
+                    "type": "image",
+                    "value": "/images/how-brexit-has-affected-markets.png",
+                    "alt": "how brexit has affected markets"
+                }
+            ]
+        },
+        {
+            "title": "A City Divided: London's Tribes of Finance Face Off",
+            "link": "https://www.wsj.com/graphics/london-tribes-of-finance-face-off/",
+            "description": [
+                {
+                    "type": "text",
+                    "value": "In the City of London, opinion splits on whether leaving the EU will be a boon or the end of finance as we know it."
+                },
+                {
+                    "type": "text",
+                    "value": "The Wall Street Journal interviewed five financiers to find out what Brexit means for them."
+                },
+                {
+                    "type": "image",
+                    "value": "/images/a-city-divided.png",
+                    "classes": "big",
+                    "alt": "brexit: a city divided"
+                },
+                {
+                    "type": "text",
+                    "value": "Using reactive JavaScript library RxJS, I put together a package that tracked player state across videos."
+                }
+            ]
+        }
+    ],
+    "skills": [
+        "I'm excellent at d3.js, React, jQuery, and the zen of vanilla JavaScript. I keep it functional and clean because code quality is 💯 on a deadline!",
+        "I have a solid grounding in all aspects of front-end development. Along with my JavaScript expertise, I'm outstanding at Sass, build tools (Webpack) and templating (Mustache).",
+        "I'm well-adept with Unix and using the command line and I'm great at Git too!",
+        "I also know my way around Adobe Illustrator and Photoshop.",
+        "I 💕 teaching others about what you can do with code. Helping out with colleagues' coding questions is the highlight of my job."
+    ],
+    "socials": [
+        {
+            "image": "/social/twitter.svg",
+            "link": "https://twitter.com/jasonleefrench",
+            "alt": "twitter"
+        },
+        {
+            "image": "/social/github.svg",
+            "link": "https://github.com/jasonleefrench",
+            "alt": "github"
+        },
+        {
+            "image": "/social/facebook.svg",
+            "link": "https://facebook.com/jasonleefrench",
+            "alt": "facebook"
+        }
     ]
-  },
-  "projects": [
-    {
-      "title": "Covid-19 Battle to Intensify as Winter Sets In",
-      "link": "https://www.wsj.com/articles/covid-19-battle-to-intensify-as-winter-sets-in-11602840602",
-      "description": [
-        {
-          "type": "text",
-          "value": "Rising Covid-19 caseloads had public health authorities on high alert as the northern hemisphere headed into Winter 2020. One hopeful sign: the southern hemisphere experienced a mild flu season, easing seasonal pressure on hospitals."
-        },
-        {
-          "type": "text",
-          "value": "To show the change in rates of flu, I designed and developed a series of animated maps. The maps are also scrubbable so readers can flick through the maps at their own pace."
-        },
-        {
-          "type": "image",
-          "value": "/images/covid-map.gif",
-          "classes": "big",
-          "alt": "covid map"
-        }
-      ]
-    },
-    {
-      "title": "Tools",
-      "description": [
-        {
-          "type": "text",
-          "value": "I develop tools that help graphics editors and reporters to produce stunning visuals."
-        },
-        {
-          "type": "text",
-          "value": "For example, reporters were spending ages combing the ECDC to get daily COVID figures. I made a tool that scrapes and saves the data to a MySQL database, ready for download at the click of a button."
-        },
-        {
-          "type": "text",
-          "value": "Or, for busy markets days, I developed an app editors could use to create trading charts for markets stories."
-        },
-        {
-          "type": "image",
-          "value": "/images/markets-dailies.png",
-          "alt": "markets dailies"
-        }
-      ]
-    },
-    {
-      "title": "Europe Got Covid Largely Under Control in the Summer. What Went Wrong?",
-      "link": "https://www.wsj.com/graphics/europe-covid-summer-what-went-wrong",
-      "description": [
-        {
-          "type": "text",
-          "value": "The second wave of the COVID crisis hit Europe harder than the first. Policymakers scrambled to keep the virus controlled until  vaccine rollotut, as people returned to their day-to-day lives."
-        },
-        {
-          "type": "image",
-          "value": "/images/covid-what-went-wrong.png",
-          "alt": "covid what went wrong"
-        },
-        {
-          "type": "text",
-          "value": "Using d3.js, I build a side-by-side view of Europe, showing clearly how the virus took hold during the second wave."
-        },
-        {
-          "type": "text",
-          "value": "I also built out a chart showing the huge spike in cases, and was the main developer for the article."
-        },
-        {
-          "type": "image",
-          "value": "/images/covid-line.gif",
-          "alt": "covid line"
-        }
-      ]
-    },
-    {
-      "title": "How Brexit Has Affected Markets",
-      "link": "https://www.wsj.com/graphics/what-brexit-politics-mean-for-markets/",
-      "description": [
-        {
-          "type": "text",
-          "value": "Since 2016 referendum, Brexit has a huge effect on the economy. The Bank of England has raised interest rates, the pound is weak against the dollar, and growth has slowed."
-        },
-        {
-          "type": "text",
-          "value": "I charted the change in some of the most important economic indicators using D3.js."
-        },
-        {
-          "type": "image",
-          "value": "/images/how-brexit-has-affected-markets.png",
-          "alt": "how brexit has affected markets"
-        }
-      ]
-    },
-    {
-      "title": "A City Divided: London's Tribes of Finance Face Off",
-      "link": "https://www.wsj.com/graphics/london-tribes-of-finance-face-off/",
-      "description": [
-        {
-          "type": "text",
-          "value": "In the City of London, opinion splits on whether leaving the EU will be a boon or the end of finance as we know it."
-        },
-        {
-          "type": "text",
-          "value": "The Wall Street Journal interviewed five financiers to find out what Brexit means for them."
-        },
-        {
-          "type": "image",
-          "value": "/images/a-city-divided.png",
-          "classes": "big",
-          "alt": "brexit: a city divided"
-        },
-        {
-          "type": "text",
-          "value": "Using reactive JavaScript library RxJS, I put together a package that tracked player state across videos."
-        }
-      ]
-    }
-  ],
-  "skills": [
-    "I'm excellent at d3.js, React, jQuery, and the zen of vanilla JavaScript. I keep it functional and clean because code quality is 💯 on a deadline!",
-    "I have a solid grounding in all aspects of front-end development. Along with my JavaScript expertise, I'm outstanding at Sass, build tools (Webpack) and templating (Mustache).",
-    "I'm well-adept with Unix and using the command line and I'm great at Git too!",
-    "I also know my way around Adobe Illustrator and Photoshop.",
-    "I 💕 teaching others about what you can do with code. Helping out with colleagues' coding questions is the highlight of my job."
-  ],
-  "socials": [
-    {
-      "image": "/social/twitter.svg",
-      "link": "https://twitter.com/jasonleefrench",
-      "alt": "twitter"
-    },
-    {
-      "image": "/social/github.svg",
-      "link": "https://github.com/jasonleefrench",
-      "alt": "github"
-    },
-    {
-      "image": "/social/facebook.svg",
-      "link": "https://facebook.com/jasonleefrench",
-      "alt": "facebook"
-    }
-  ]
 }
