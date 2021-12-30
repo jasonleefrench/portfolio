@@ -1,10 +1,10 @@
-const shimmer = (width, height) => `
+const shimmer = (width, height, primary = '#3498db', secondary = '#8e44ad') => `
 <svg width="${width}" height="${height}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
     <linearGradient id="g">
-      <stop stop-color="#3498db" offset="0%" />
+      <stop stop-color="${primary}" offset="0%" />
       <stop stop-color="#fff" offset="50%" />
-      <stop stop-color="#8e44ad" offset="100%" />
+      <stop stop-color="${secondary}" offset="100%" />
     </linearGradient>
   </defs>
   <rect width="${width}" height="${height}" fill="white" />
@@ -17,6 +17,7 @@ const toBase64 = str =>
         ? Buffer.from(str).toString('base64')
         : window.btoa(str)
 
-const blur = (width, height) => toBase64(shimmer(width, height))
+const blur = (width, height, [primary, secondary]) =>
+    toBase64(shimmer(width, height, primary, secondary))
 
 export default blur

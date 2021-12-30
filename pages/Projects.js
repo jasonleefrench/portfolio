@@ -4,7 +4,8 @@ import styles from '../styles/Home.module.css'
 
 const Components = {
     text: __html => <p dangerouslySetInnerHTML={{ __html }} />,
-    image: (src, classes, alt) => {
+    image: (src, classes, alt, background) => {
+        console.log(background)
         const extraClasses = classes.split(' ')
         const extraClassName = `${extraClasses
             .map(name => styles[name])
@@ -14,7 +15,11 @@ const Components = {
                 <Image
                     src={src}
                     layout="fill"
-                    blurDataURL={`data:image/svg+xml;base64,${blur(540, 475)}`}
+                    blurDataURL={`data:image/svg+xml;base64,${blur(
+                        540,
+                        475,
+                        background
+                    )}`}
                     objectFit="contain"
                     quality={100}
                     alt={alt}
@@ -35,8 +40,10 @@ const Project = ({ project, index }) => (
             )}
         </h3>
         {project.description.map(
-            ({ type, value, classes = '', alt = '' }, key) => (
-                <div key={key}>{Components[type](value, classes, alt)}</div>
+            ({ type, value, classes = '', alt = '', background = [] }, key) => (
+                <div key={key}>
+                    {Components[type](value, classes, alt, background)}
+                </div>
             )
         )}
         <hr />
