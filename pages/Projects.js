@@ -5,7 +5,6 @@ import styles from '../styles/Home.module.css'
 const Components = {
     text: __html => <p dangerouslySetInnerHTML={{ __html }} />,
     image: (src, classes, alt, background) => {
-        console.log(background)
         const extraClasses = classes.split(' ')
         const extraClassName = `${extraClasses
             .map(name => styles[name])
