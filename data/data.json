@@ -33,8 +33,7 @@
                     "type": "image",
                     "value": "/images/covid-map.gif",
                     "classes": "big",
-                    "alt": "covid map",
-                    "background": ["#fed43d", "#ee3a42"]
+                    "alt": "covid map"
                 }
             ]
         },
@@ -56,8 +55,7 @@
                 {
                     "type": "image",
                     "value": "/images/markets-dailies.png",
-                    "alt": "markets dailies",
-                    "background": ["#e0515a", "#eff7ec"]
+                    "alt": "markets dailies"
                 }
             ]
         },
@@ -72,8 +70,7 @@
                 {
                     "type": "image",
                     "value": "/images/covid-what-went-wrong.png",
-                    "alt": "covid what went wrong",
-                    "background": ["#f5edda", "#fed54c"]
+                    "alt": "covid what went wrong"
                 },
                 {
                     "type": "text",
@@ -86,8 +83,7 @@
                 {
                     "type": "image",
                     "value": "/images/covid-line.gif",
-                    "alt": "covid line",
-                    "background": ["#f5edda", "#fed54c"]
+                    "alt": "covid line"
                 }
             ]
         },
@@ -126,8 +122,7 @@
                     "type": "image",
                     "value": "/images/a-city-divided.png",
                     "classes": "big",
-                    "alt": "brexit: a city divided",
-                    "background": ["#00cec9", "#fab1a0"]
+                    "alt": "brexit: a city divided"
                 },
                 {
                     "type": "text",

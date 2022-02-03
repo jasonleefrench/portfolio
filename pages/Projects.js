@@ -3,22 +3,18 @@ import blur from '../components/blur'
 import styles from '../styles/Home.module.css'
 
 const Components = {
-    text: __html => <p dangerouslySetInnerHTML={{ __html }} />,
-    image: (src, classes, alt, background) => {
+    text: (__html) => <p dangerouslySetInnerHTML={{ __html }} />,
+    image: (src, classes, alt) => {
         const extraClasses = classes.split(' ')
         const extraClassName = `${extraClasses
-            .map(name => styles[name])
+            .map((name) => styles[name])
             .join(' ')}`
         return (
             <div className={`${styles.bgWrap} ${extraClassName}`}>
                 <Image
                     src={src}
                     layout="fill"
-                    blurDataURL={`data:image/svg+xml;base64,${blur(
-                        540,
-                        475,
-                        background
-                    )}`}
+                    blurDataURL={`data:image/svg+xml;base64,${blur(540, 475)}`}
                     objectFit="contain"
                     quality={100}
                     alt={alt}
@@ -39,10 +35,8 @@ const Project = ({ project, index }) => (
             )}
         </h3>
         {project.description.map(
-            ({ type, value, classes = '', alt = '', background = [] }, key) => (
-                <div key={key}>
-                    {Components[type](value, classes, alt, background)}
-                </div>
+            ({ type, value, classes = '', alt = '' }, key) => (
+                <div key={key}>{Components[type](value, classes, alt)}</div>
             )
         )}
         <hr />
