@@ -5,130 +5,82 @@
             "text": "<span>{Hello!}</span><span>My name is jason</span>"
         },
         "descriptions": [
-            "I'm a journalist/web developer/designer.",
-            "My goal in life is to <a href='/blog'>blog</a> <em>more</em> and <a href='https://twitter.com/jasonleefrench'>tweet</a> classic Simpsons&nbsp;quotes&nbsp;<em>less</em>.",
+            "I'm a journalist/web developer/designer. My goal in life is to <a href='/blog'>blog</a> <em>more</em> and <a href='https://twitter.com/jasonleefrench'>tweet</a> classic Simpsons quotes <em>less</em>.",
             "I work as a graphics reporter at the <a href='https://twitter.com/WSJGraphics'>Wall Street Journal</a>. I craft clean code to build interactive graphics and tools.",
             "Telling stories is a blast!",
             {
                 "type": "scrollTo",
-                "text": "I've listed a few of graphics and other things I've made below, but feel free to skip past to my {skills}!",
+                "text": "I've listed a few graphics and other things I've made below, but feel free to skip past to my {skills}!",
                 "selector": "#skills"
             }
         ]
     },
     "projects": [
         {
-            "title": "Covid-19 Battle to Intensify as Winter Sets In",
-            "link": "https://www.wsj.com/articles/covid-19-battle-to-intensify-as-winter-sets-in-11602840602",
-            "description": [
-                {
-                    "type": "text",
-                    "value": "Rising Covid-19 caseloads had public health authorities on high alert as the northern hemisphere headed into Winter 2020. One hopeful sign: the southern hemisphere experienced a mild flu season, easing seasonal pressure on hospitals."
-                },
-                {
-                    "type": "text",
-                    "value": "To show the change in rates of flu, I designed and developed a series of animated maps. The maps are also scrubbable so readers can flick through the maps at their own pace."
-                },
-                {
-                    "type": "image",
-                    "value": "/images/covid-map.gif",
-                    "classes": "big",
-                    "alt": "covid map"
-                }
-            ]
+            "title": "How TikTok Serves Up Sex and Drug Videos to Minors",
+            "link": "https://www.wsj.com/articles/tiktok-algorithm-sex-drugs-minors-11631052944",
+            "date": "September 2021",
+            "meta": [
+                "🏆 Philip Meyer Journalism Award",
+                "🥉 Society for News Design: Award of Excellence"
+            ],
+            "description": {
+                "text": [
+                    "Wall Street Journal reporters created dozens of automated accounts to dive deep into TikTok–one of the world's fastest-growing social media platforms.",
+                    "Analysis of images and videos these bots collected found that TikTok's algorithms can quickly send young users down a well of sex and drug content.",
+                    "I developed a series of graphics and charts that gave a taste of what the bots were exposed to, revealing to non-technical audiences the extreme content their children could be viewing."
+                ],
+                "image": "/images/how-tiktok-serves-up-sex-and-drug-videos-to-minors/multi.jpg"
+            }
         },
         {
-            "title": "Tools",
-            "description": [
-                {
-                    "type": "text",
-                    "value": "I develop tools that help graphics editors and reporters to produce stunning visuals."
-                },
-                {
-                    "type": "text",
-                    "value": "For example, reporters were spending ages combing the ECDC to get daily COVID figures. I made a tool that scrapes and saves the data to a MySQL database, ready for download at the click of a button."
-                },
-                {
-                    "type": "text",
-                    "value": "Or, for busy markets days, I developed an app editors could use to create trading charts for markets stories."
-                },
-                {
-                    "type": "image",
-                    "value": "/images/markets-dailies.png",
-                    "alt": "markets dailies"
-                }
-            ]
+            "title": "Why Student Debt Keeps Growing—Even When Borrowers Keep Paying",
+            "link": "https://www.wsj.com/articles/how-your-student-debt-keeps-growingeven-when-you-keep-paying-11640994313",
+            "date": "December 2021",
+            "description": {
+                "text": [
+                    "New data from the U.S. Education Department showed what many suspected: some college degrees just cannot pay off, and taxpayers foot the bill when borrowers can't pay down their loans.",
+                    "In fact, graduates can diligently pay off loans and end up with more debt than when they started paying.",
+                    "We used scrollytelling to keep the reader focused on one main visual that changed over time. This seemingly simple design of bar charts and animation makes an immediate and impactful statement of how crushing this debt can be for individuals."
+                ],
+                "image": "/images/why-student-debt-keeps-growing-even-when-borrowers-keep-paying/mac.jpg"
+            }
+        },
+        {
+            "title": "Covid-19 Battle to Intensify as Winter Sets In",
+            "link": "https://www.wsj.com/articles/covid-19-battle-to-intensify-as-winter-sets-in-11602840602",
+            "date": "October 2020",
+            "description": {
+                "text": [
+                    "Rising Covid-19 caseloads had public health authorities on high alert as the northern hemisphere headed into Winter 2020. One hopeful sign: the southern hemisphere experienced a mild flu season, easing seasonal pressure on hospitals.",
+                    "To show the change in rates of flu, I designed and developed a series of animated maps. The maps are also scrubbable so readers can flick through the maps at their own pace."
+                ],
+                "image": "/images/covid-19-battle-to-intensify-as-winter-sets-in/iphone.jpg"
+            }
         },
         {
             "title": "Europe Got Covid Largely Under Control in the Summer. What Went Wrong?",
             "link": "https://www.wsj.com/graphics/europe-covid-summer-what-went-wrong",
-            "description": [
-                {
-                    "type": "text",
-                    "value": "The second wave of the COVID crisis hit Europe harder than the first. Policymakers scrambled to keep the virus controlled until  vaccine rollotut, as people returned to their day-to-day lives."
-                },
-                {
-                    "type": "image",
-                    "value": "/images/covid-what-went-wrong.png",
-                    "alt": "covid what went wrong"
-                },
-                {
-                    "type": "text",
-                    "value": "Using d3.js, I build a side-by-side view of Europe, showing clearly how the virus took hold during the second wave."
-                },
-                {
-                    "type": "text",
-                    "value": "I also built out a chart showing the huge spike in cases, and was the main developer for the article."
-                },
-                {
-                    "type": "image",
-                    "value": "/images/covid-line.gif",
-                    "alt": "covid line"
-                }
-            ]
+            "date": "November 2020",
+            "description": {
+                "text": [
+                    "The second wave of the COVID crisis hit Europe harder than the first. Policymakers scrambled to keep the virus controlled until  vaccine rollout, as people returned to their day-to-day lives.",
+                    "Using d3.js, I built a side-by-side view of Europe, showing clearly how the virus took hold during the second wave."
+                ],
+                "image": "/images/europe-covid-summer-what-went-wrong/iphone.jpg"
+            }
         },
         {
             "title": "How Brexit Has Affected Markets",
             "link": "https://www.wsj.com/graphics/what-brexit-politics-mean-for-markets/",
-            "description": [
-                {
-                    "type": "text",
-                    "value": "Since 2016 referendum, Brexit has a huge effect on the economy. The Bank of England has raised interest rates, the pound is weak against the dollar, and growth has slowed."
-                },
-                {
-                    "type": "text",
-                    "value": "I charted the change in some of the most important economic indicators using D3.js."
-                },
-                {
-                    "type": "image",
-                    "value": "/images/how-brexit-has-affected-markets.png",
-                    "alt": "how brexit has affected markets"
-                }
-            ]
-        },
-        {
-            "title": "A City Divided: London's Tribes of Finance Face Off",
-            "link": "https://www.wsj.com/graphics/london-tribes-of-finance-face-off/",
-            "description": [
-                {
-                    "type": "text",
-                    "value": "In the City of London, opinion splits on whether leaving the EU will be a boon or the end of finance as we know it."
-                },
-                {
-                    "type": "text",
-                    "value": "The Wall Street Journal interviewed five financiers to find out what Brexit means for them."
-                },
-                {
-                    "type": "image",
-                    "value": "/images/a-city-divided.png",
-                    "classes": "big",
-                    "alt": "brexit: a city divided"
-                },
-                {
-                    "type": "text",
-                    "value": "Using reactive JavaScript library RxJS, I put together a package that tracked player state across videos."
-                }
-            ]
+            "date": "January 2019",
+            "description": {
+                "text": [
+                    "Since the 2016 referendum, Brexit has had a huge effect on the economy. The Bank of England has raised interest rates, the pound is weak against the dollar, and growth has slowed.",
+                    "I charted the change in some of the most important economic indicators using D3.js."
+                ],
+                "image": "/images/what-brexit-politics-mean-for-markets/mac.jpg"
+            }
         }
     ],
     "skills": [
