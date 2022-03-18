@@ -1,5 +1,5 @@
 .container {
-    padding: 0 1rem;
+    margin: 0 auto;
 }
 
 .intro {
@@ -8,18 +8,16 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem;
 }
 
 .title {
     margin: 0;
     line-height: 1.15;
     font-size: 4rem;
-}
-
-.title,
-.description {
-    text-align: center;
 }
 
 .title span {
@@ -32,32 +30,68 @@
     font-size: 1.25rem;
     font-weight: 300;
     margin-bottom: 0;
-    max-width: 580px;
 }
 
-.projects p,
-.projects h2,
-.projects h3,
-.skills h2,
-.socials h2 {
-    max-width: 580px;
-    margin-left: auto;
-    margin-right: auto;
+.project {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+}
+
+.reverse {
+    grid-template-columns: 1fr 1fr;
+}
+
+.textHolder {
+    max-width: 37.5vw;
+    margin: 0 auto;
+}
+
+.imageHolder {
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 25vw;
+    margin: 0 auto;
+    position: relative;
 }
 
 .projects h2,
 .skills h2,
 .socials h2 {
     font-size: 1.75rem;
-}
-
-.socials h2 {
-    text-align: center;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem;
 }
 
 .projects h3,
 .skills h3 {
     font-size: 1.25rem;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.project h3 {
+    margin-bottom: 5px;
+}
+
+.project h4.date {
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.projects h4 {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .description a,
@@ -67,21 +101,83 @@
     cursor: pointer;
 }
 
-.bgWrap {
+.projects p {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.strip {
+    overflow: scroll;
+}
+
+.strip::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.strip .bgWrap {
     position: relative;
     overflow: hidden;
-    padding: 25vh;
-    max-width: 650px;
-    margin: 50px auto;
+    padding: 35vh;
 }
 
-.big {
-    padding: 40vh;
+.skillsHolder {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
-@media (max-width: 600px) {
-    .big {
-        padding: 25vh;
+@media (max-width: 1000px) {
+    .textHolder {
+        max-width: 100%;
+    }
+    .textHolder {
+        padding: 4rem;
+        padding-left: 0;
+    }
+    .reverse .textHolder {
+        padding: 4rem;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 750px) {
+    .intro {
+        padding-right: 1.5rem !important;
+        padding-left: 1.5rem !important;
+    }
+    .intro .greeter {
+        text-align: center;
+    }
+    .project img {
+        background-image: none !important;
+    }
+    .project {
+        overflow: hidden;
+        height: auto;
+        padding: 0;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .project:first-child {
+        margin-top: -100px;
+    }
+    .imageHolder {
+        padding: 70vw !important;
+        margin-left: -20vw;
+        margin-top: -20vh;
+        margin-bottom: -10vh;
+        z-index: -1;
+    }
+    .reverse {
+        display: block;
+    }
+    .textHolder {
+        padding: 0 !important;
+        padding-right: 1.5rem !important;
+        padding-left: 1.5rem !important;
     }
 }
 
@@ -94,7 +190,8 @@
     justify-content: space-between;
 }
 
-.socials img {
+.socials img,
+.socials h2 {
     text-align: center;
 }
 
