@@ -1,5 +1,7 @@
 .container {
     margin: 0 auto;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .intro {
@@ -144,12 +146,17 @@
 }
 
 @media (max-width: 750px) {
+    .container {
+        margin-top: 50px;
+    }
     .intro {
         padding-right: 1.5rem !important;
         padding-left: 1.5rem !important;
     }
     .intro .greeter {
         text-align: center;
+        margin-bottom: 20px;
+        line-height: 1.25;
     }
     .project img {
         background-image: none !important;
@@ -160,9 +167,6 @@
         padding: 0;
         display: flex;
         flex-direction: column-reverse;
-    }
-    .project:first-child {
-        margin-top: -100px;
     }
     .imageHolder {
         padding: 70vw !important;
