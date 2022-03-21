@@ -1,5 +1,18 @@
 import Image from 'next/image'
+import loader from '../components/loader'
 import styles from '../styles/Home.module.css'
+
+const LOADER_COLORS = [
+    '#2980b9',
+    '#27ae60',
+    '#e74c3c',
+    '#3498db',
+    '#8e44ad',
+    '#f39c12',
+]
+
+const loaderColor =
+    LOADER_COLORS[Math.floor(Math.random() * LOADER_COLORS.length)]
 
 const Img = ({ src, alt = '' }) => (
     <div className={styles.imageHolder}>
@@ -9,6 +22,8 @@ const Img = ({ src, alt = '' }) => (
             objectFit="contain"
             quality={100}
             alt={alt}
+            placeholder="blur"
+            blurDataURL={loader(loaderColor)}
         />
     </div>
 )

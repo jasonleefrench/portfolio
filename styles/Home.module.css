@@ -61,6 +61,13 @@
     position: relative;
 }
 
+.imageHolder img {
+    filter: none !important;
+    background-size: 135px !important;
+    background-repeat: no-repeat !important;
+    background-position: center;
+}
+
 .projects h2,
 .skills h2,
 .socials h2 {
