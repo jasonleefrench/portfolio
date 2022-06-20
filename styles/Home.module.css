@@ -29,7 +29,7 @@
 
 .description {
     line-height: 1.5;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 300;
     margin-bottom: 0;
 }
@@ -41,6 +41,7 @@
     align-items: center;
     margin: 0 auto;
     position: relative;
+    min-height: 100vh;
 }
 
 .reverse {
@@ -56,7 +57,7 @@
     max-width: 100%;
     height: auto;
     overflow: hidden;
-    padding: 25vw;
+    padding: 20vw;
     margin: 0 auto;
     position: relative;
 }
@@ -87,6 +88,7 @@
 }
 
 .project h3 {
+    font-size: 2.5rem;
     margin-bottom: 5px;
 }
 
@@ -101,6 +103,11 @@
     margin-right: auto;
     margin-top: 2px;
     margin-bottom: 2px;
+}
+
+.projects h3 a,
+.projects h3 a:visited {
+    color: black;
 }
 
 .description a,
@@ -178,8 +185,6 @@
     .imageHolder {
         padding: 70vw !important;
         margin-left: -20vw;
-        margin-top: -20vh;
-        margin-bottom: -10vh;
         z-index: -1;
     }
     .reverse {

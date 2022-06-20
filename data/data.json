@@ -29,7 +29,7 @@
                     "Analysis of images and videos these bots collected found that TikTok's algorithms can quickly send young users down a well of sex and drug content.",
                     "I developed a series of graphics and charts that gave a taste of what the bots were exposed to, revealing to non-technical audiences the extreme content their children could be viewing."
                 ],
-                "image": "/images/how-tiktok-serves-up-sex-and-drug-videos-to-minors/multi.jpg"
+                "image": "/images/how-tiktok-serves-up-sex-and-drug-videos-to-minors.png"
             }
         },
         {
@@ -42,7 +42,7 @@
                     "In fact, graduates can diligently pay off loans and end up with more debt than when they started paying.",
                     "We used scrollytelling to keep the reader focused on one main visual that changed over time. This seemingly simple design of bar charts and animation makes an immediate and impactful statement of how crushing this debt can be for individuals."
                 ],
-                "image": "/images/why-student-debt-keeps-growing-even-when-borrowers-keep-paying/mac.jpg"
+                "image": "/images/why-student-debt-keeps-growing-even-when-borrowers-keep-paying.png"
             }
         },
         {
@@ -54,7 +54,7 @@
                     "Rising Covid-19 caseloads had public health authorities on high alert as the northern hemisphere headed into Winter 2020. One hopeful sign: the southern hemisphere experienced a mild flu season, easing seasonal pressure on hospitals.",
                     "To show the stark change in rates of flu, I designed and developed a series of animated maps. The maps are also scrubbable so readers can flick through the maps at their own pace."
                 ],
-                "image": "/images/covid-19-battle-to-intensify-as-winter-sets-in/iphone.jpg"
+                "image": "/images/covid-19-battle-to-intensify-as-winter-sets-in.png"
             }
         },
         {
@@ -66,7 +66,7 @@
                     "The second wave of the COVID crisis hit Europe harder than the first. Policymakers scrambled to keep the virus controlled until  vaccine rollout, as people returned to their day-to-day lives.",
                     "I built a side-by-side map view of Europe to illustrate how the virus took hold during the second wave, and an animated chart that showed the skyrocketing case numbers in the US and EU27 and U.K."
                 ],
-                "image": "/images/europe-covid-summer-what-went-wrong/iphone.jpg"
+                "image": "/images/europe-covid-summer-what-went-wrong.png"
             }
         },
         {
@@ -79,7 +79,7 @@
                     "The Bank of England has raised interest rates, the pound is weak against the dollar, growth has slowed, and, at least when compared to its peers, the FTSE 100 is lagging.",
                     "To find the price of Brexit for U.K. markets, I charted  its most important indicators using D3.js, supporting Wall Street Journal reporters' analysis."
                 ],
-                "image": "/images/what-brexit-politics-mean-for-markets/mac.jpg"
+                "image": "/images/what-brexit-politics-mean-for-markets.png"
             }
         }
     ],
