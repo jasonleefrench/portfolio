@@ -34,6 +34,18 @@
             }
         },
         {
+            "title": "Amazon Routinely Hired Dangerous Trucking Companies, With Deadly Consequences",
+            "link": "https://www.wsj.com/articles/amazon-trucks-crash-safety-11663793491",
+            "date": "September 2022",
+            "description": {
+                "text": [
+                    "The Wall Street Journal, examining more than 3,500 trucking companies, unearthed a startling fact: trucking contractors that worked frequently for Amazon were more than twice as likely as all other similar companies to receive bad unsafe driving scores.",
+                    "I used WebGL to animate thousands of dots to represent the trucking companies, providing an in-depth and intuitive view of the data."
+                ],
+                "image": "/images/amazon-trucks-crash-safety.gif"
+            }
+        },
+        {
             "title": "Why Student Debt Keeps Growing—Even When Borrowers Keep Paying",
             "link": "https://www.wsj.com/articles/how-your-student-debt-keeps-growingeven-when-you-keep-paying-11640994313",
             "date": "December 2021",
@@ -68,19 +80,6 @@
                     "I built a side-by-side map view of Europe to illustrate how the virus took hold during the second wave, and an animated chart that showed the skyrocketing case numbers in the US and EU27 and U.K."
                 ],
                 "image": "/images/europe-covid-summer-what-went-wrong.png"
-            }
-        },
-        {
-            "title": "How Brexit Has Affected Markets",
-            "link": "https://www.wsj.com/graphics/what-brexit-politics-mean-for-markets/",
-            "date": "January 2019",
-            "description": {
-                "text": [
-                    "Since the 2016 referendum, Brexit has had a huge effect on the economy.",
-                    "The Bank of England has raised interest rates, the pound is weak against the dollar, growth has slowed, and, at least when compared to its peers, the FTSE 100 is lagging.",
-                    "To find the price of Brexit for U.K. markets, I charted  its most important indicators using D3.js, supporting Wall Street Journal reporters' analysis."
-                ],
-                "image": "/images/what-brexit-politics-mean-for-markets.png"
             }
         }
     ],
