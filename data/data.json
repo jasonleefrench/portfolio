@@ -42,7 +42,8 @@
                     "The Wall Street Journal, examining more than 3,500 trucking companies, unearthed a startling fact: trucking contractors that worked frequently for Amazon were more than twice as likely as all other similar companies to receive bad unsafe driving scores.",
                     "I used WebGL to animate thousands of dots to represent the trucking companies, providing an in-depth and intuitive view of the data."
                 ],
-                "image": "/images/amazon-trucks-crash-safety.gif"
+                "image": "/images/amazon-trucks-crash-safety.gif",
+                "extraImageClasses": "gif"
             }
         },
         {

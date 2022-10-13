@@ -14,8 +14,8 @@ const LOADER_COLORS = [
 const loaderColor =
     LOADER_COLORS[Math.floor(Math.random() * LOADER_COLORS.length)]
 
-const Img = ({ src, alt = '' }) => (
-    <div className={styles.imageHolder}>
+const Img = ({ src, alt = '', extraClasses }) => (
+    <div className={`${styles.imageHolder} ${styles[extraClasses]}`}>
         <Image
             src={src}
             layout="fill"
@@ -51,11 +51,11 @@ const Project = ({ project, index }) => {
         index % 2 ? (
             <Text project={project} />
         ) : (
-            <Img src={project.description.image} />
+            <Img src={project.description.image} extraClasses={project.description.extraImageClasses} />
         )
     const Right =
         index % 2 ? (
-            <Img src={project.description.image} />
+            <Img src={project.description.image} extraClasses={project.description.extraImageClasses} />
         ) : (
             <Text project={project} />
         )

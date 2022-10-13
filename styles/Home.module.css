@@ -187,6 +187,10 @@
         margin-left: -20vw;
         z-index: -1;
     }
+    .imageHolder.gif {
+        padding: 50vw !important;
+        margin-left: 0 !important;
+    }
     .reverse {
         display: block;
     }
