@@ -16,6 +16,20 @@
     },
     "projects": [
         {
+            "title": "Who Owns SpongeBob? AI Shakes Hollywood’s Creative Foundation",
+            "link": "https://www.wsj.com/articles/ai-chatgpt-hollywood-intellectual-property-spongebob-81fd5d15",
+            "date": "April 2023",
+            "description": {
+                "text": [
+                    "ChatGPT is already changing the world.",
+                    "Hollywood wants to use generative technology to slash production costs and even create characters. But who (or what) owns the intellectual property of AI-derived works?",
+                    "To give a taste of what ChatGPT can achieve, I built a tool that–based on characters and traits the reader chooses–generates a scene from a pilot TV show.",
+                    "The results are sometimes cheesy, sometimes tearjearking and sometimes hilarious."
+                ],
+                "image": "/images/who-owns-spongebob-ai-shakes-hollywoods-creative-foundation.png"
+            }
+        },
+        {
             "title": "How TikTok Serves Up Sex and Drug Videos to Minors",
             "link": "https://www.wsj.com/articles/tiktok-algorithm-sex-drugs-minors-11631052944",
             "date": "September 2021",
