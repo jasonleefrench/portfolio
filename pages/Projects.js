@@ -1,4 +1,4 @@
-import Image from "next/image"
+import { useCallback, useState } from "react"
 import loader from "../components/loader"
 import styles from "../styles/Home.module.css"
 
@@ -20,25 +20,28 @@ const Video = ({ src, extraClasses }) => (
     autoPlay
     muted
     loop
-    style={{ maxWidth: "50%", margin: "0 auto" }}
+    style={{ maxWidth: "80%", margin: "0 auto" }}
   >
     <source src={src} type="video/webm" />
   </video>
 )
 
-const Img = ({ src, alt = "", extraClasses }) => (
-  <div className={`${styles.imageHolder} ${styles[extraClasses]}`}>
-    <Image
-      src={src}
-      layout="fill"
-      objectFit="contain"
-      quality={100}
-      alt={alt}
-      placeholder="blur"
-      blurDataURL={loader(loaderColor)}
-    />
-  </div>
-)
+const Img = ({ src, alt = "", extraClasses }) => {
+  const [isLoaded, setIsLoaded] = useState(false)
+  const blur = loader(loaderColor)
+  const onLoad = () => setIsLoaded(true)
+  return (
+    <div>
+      <img
+        style={{ maxWidth: "80%", margin: "0 auto" }}
+        onLoad={onLoad}
+        src={src}
+        alt={alt}
+      />
+      {!isLoaded && <img src={blur} />}
+    </div>
+  )
+}
 
 const Text = ({ project }) => (
   <div className={styles.textHolder}>
