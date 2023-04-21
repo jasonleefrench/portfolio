@@ -28,12 +28,7 @@ const Video = ({ src }) => (
 const Img = ({ src, alt = "", extraClasses }) => {
   return (
     <div>
-      <img
-        style={{ maxWidth: "80%", margin: "0 auto" }}
-        onLoad={onLoad}
-        src={src}
-        alt={alt}
-      />
+      <img style={{ maxWidth: "80%", margin: "0 auto" }} src={src} alt={alt} />
     </div>
   )
 }
