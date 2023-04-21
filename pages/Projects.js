@@ -14,13 +14,12 @@ const LOADER_COLORS = [
 const loaderColor =
   LOADER_COLORS[Math.floor(Math.random() * LOADER_COLORS.length)]
 
-const Video = ({ src, extraClasses }) => (
+const Video = ({ src }) => (
   <video
-    className={`${styles[extraClasses]}`}
     autoPlay
     muted
     loop
-    style={{ maxWidth: "80%", margin: "0 auto" }}
+    style={{ maxWidth: "80%", margin: "0 auto", display: "block" }}
   >
     <source src={src} type="video/webm" />
   </video>
