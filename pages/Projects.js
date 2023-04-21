@@ -27,9 +27,6 @@ const Video = ({ src, extraClasses }) => (
 )
 
 const Img = ({ src, alt = "", extraClasses }) => {
-  const [isLoaded, setIsLoaded] = useState(false)
-  const blur = loader(loaderColor)
-  const onLoad = () => setIsLoaded(true)
   return (
     <div>
       <img
@@ -38,7 +35,6 @@ const Img = ({ src, alt = "", extraClasses }) => {
         src={src}
         alt={alt}
       />
-      {!isLoaded && <img src={blur} />}
     </div>
   )
 }
