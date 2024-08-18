@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.css'
 import data from '../data/data'
 
 import Intro from './Intro'
-import Projects from './Projects'
+import Projects from './_Projects'
 import Skills from './Skills'
 import Socials from './Socials'
 
