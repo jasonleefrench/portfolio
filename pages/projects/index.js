@@ -17,7 +17,6 @@ const Index = () => {
         }
         getProjects()
     }, [])
-    console.log(projects)
     return (
         <div className={'wrapper'}>
             <Header title={'Projects'} />
