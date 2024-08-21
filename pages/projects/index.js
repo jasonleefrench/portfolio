@@ -1,9 +1,17 @@
 import Link from 'next/link'
-import groq from 'groq'
 import Header from '../../components/header'
-import client from '../../client'
 import { prettyDate } from '../../utils'
 import { useEffect, useState } from 'react'
+
+const tagColors = {
+    quiz: '#e74c3c',
+    presentation: '#2ecc71',
+    data: '#f1c40f',
+    whimsy: '#8e44ad',
+    live: '#2c3e50',
+    election: '#3498db',
+    chatgpt: '#7f8c8d',
+}
 
 const Index = () => {
     const [projects, setProjects] = useState([])
@@ -26,7 +34,7 @@ const Index = () => {
                 {projects
                     .sort((a, b) => b.timestamp - a.timestamp)
                     .map(
-                        ({ url, title, timestamp, uuid }) =>
+                        ({ url, title, timestamp, uuid, tags = [] }) =>
                             title && (
                                 <li key={uuid}>
                                     <span className="post-meta">
@@ -35,6 +43,20 @@ const Index = () => {
                                     <Link href={url} as={url}>
                                         <a className="post-link">{title}</a>
                                     </Link>
+                                    {tags
+                                        .sort((a, b) => a.localeCompare(b))
+                                        .map((tag) => (
+                                            <span
+                                                key={tag}
+                                                className="tag"
+                                                style={{
+                                                    backgroundColor:
+                                                        tagColors[tag],
+                                                }}
+                                            >
+                                                {tag}
+                                            </span>
+                                        ))}
                                 </li>
                             )
                     )}
