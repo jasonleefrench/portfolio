@@ -5,13 +5,8 @@
             "text": "<span>{Hello!}</span><span>My name is jason</span>"
         },
         "descriptions": [
-            "I'm a journalist/web developer/designer. I <a href='https://twitter.com/jasonleefrench'>tweet</a> classic Simpsons quotes and work as a graphics reporter at the <a href='https://twitter.com/WSJGraphics'>Wall Street Journal</a>. I craft clean code to build interactive graphics and tools.",
-            "Telling stories is a blast!",
-            {
-                "type": "scrollTo",
-                "text": "I've listed a few graphics and other things I've made below, but feel free to skip past to my {skills}!",
-                "selector": "#skills"
-            }
+            "I'm a journalist/web developer/designer. I <del><a href='https://twitter.com/jasonleefrench'>tweet</a></del> <ins style='text-decoration: none;'><a href='https://bsky.app/profile/jasonleefren.ch'>bluesky</a></ins> classic Simpsons quotes and work as a graphics reporter at the <a href='https://twitter.com/WSJGraphics'>Wall Street Journal</a>. I craft clean code to build <a href='https://www.jasonleefren.ch/projects'>interactive graphics</a> and tools.",
+            "Telling stories is a blast!"
         ]
     },
     "projects": [
@@ -100,9 +95,7 @@
     ],
     "skills": [
         "I'm excellent at D3.js, React, jQuery, and the zen of vanilla JavaScript. I keep it functional and clean because code quality is 💯 on a deadline!",
-        "I have a solid grounding in all aspects of front-end development. Along with my JavaScript expertise, I'm outstanding at Sass, build tools (Webpack) and templating (Mustache).",
-        "I'm well-adept with Unix and using the command line and I'm great at Git too!",
-        "I also know my way around Adobe Illustrator and Photoshop.",
+        "I have a solid grounding in all aspects of front-end development and design. Along with my JavaScript expertise, I'm well-adept with Unix and using the command line and I'm great at Git too!",
         "I 💕 teaching others about what you can do with code. Helping out with colleagues' coding questions is the highlight of my job."
     ],
     "socials": [

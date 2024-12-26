@@ -31,11 +31,7 @@ const Home = () => (
             />
         </Head>
         <Intro data={data.intro} />
-        <main>
-            <Projects data={data.projects} />
-            <Skills data={data.skills} />
-            <Socials data={data.socials} />
-        </main>
+        <Skills data={data.skills} />
         <footer className={styles.footer}>❤️</footer>
     </div>
 )
