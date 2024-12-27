@@ -11,7 +11,7 @@ const Greeter = ({ text }) => {
         const revisit = lastVisit && secondsInHalfDay > Date.now() - +lastVisit
         const hours = new Date().getHours()
         const greeting = revisit
-            ? 'Hi again! 👋'
+            ? 'Hi again! <span class="wave">👋</span>'
             : hours < 12
             ? 'Good morning! ☀️'
             : hours < 18
