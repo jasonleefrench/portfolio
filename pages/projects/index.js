@@ -1,10 +1,10 @@
+import { useEffect, useState, useCallback } from 'react'
+import InfiniteScroll from 'react-infinite-scroll-component'
 import Link from 'next/link'
 import Header from '../../components/header'
-import { prettyDate } from '../../utils'
-import { useEffect, useState } from 'react'
-
-import InfiniteScroll from 'react-infinite-scroll-component'
 import loader from '../../components/loader'
+import useAnalytics from '../../hooks/useAnalytics'
+import { prettyDate } from '../../utils'
 
 const tagColors = {
     quiz: '#e74c3c',
@@ -17,17 +17,26 @@ const tagColors = {
 }
 
 const Index = () => {
+    const analytics = useAnalytics()
     const [projects, setProjects] = useState([])
     const [cursor, setCursor] = useState('')
     const [hasMore, setHasMore] = useState(true)
+    console.log(analytics)
+    const update = useCallback(
+        (data) => {
+            setProjects((prev) => [...prev, ...data.projects])
+            setCursor(data.nextCursor)
+            setHasMore(!!data.nextCursor)
+            analytics('projects_scroll', {
+                nextCursor: data.nextCursor,
+            })
+        },
+        [analytics]
+    )
     useEffect(() => {
         getData(update)
-    }, [])
-    function update(data) {
-        setProjects((prev) => [...prev, ...data.projects])
-        setCursor(data.nextCursor)
-        setHasMore(!!data.nextCursor)
-    }
+        analytics('projects_view')
+    }, [analytics, update])
     return (
         <div className={'wrapper'}>
             <Header title={'Projects'} />
