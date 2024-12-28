@@ -13,13 +13,16 @@ const firebaseConfig = {
 }
 
 const useAnalytics = () => {
-    const app = initializeApp(firebaseConfig)
-    const analytics = getAnalytics(app)
+    let analytics
+    try {
+        const app = initializeApp(firebaseConfig)
+        analytics = getAnalytics(app)
+    } catch (e) {
+        console.error('Failed to initialize Firebase Analytics', e)
+    }
     return useMemo(
         () =>
-            typeof window === 'undefined'
-                ? () => null
-                : (tag, data) => logEvent(analytics, tag, data),
+            analytics ? (tag, data) => logEvent(analytics, tag, data) : null,
         [analytics]
     )
 }
