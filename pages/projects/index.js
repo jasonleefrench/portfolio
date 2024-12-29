@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from 'react'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import Link from 'next/link'
-import Header from '../../components/Header'
+import Header from '../../components/header'
 import loader from '../../components/loader'
 import useAnalytics from '../../hooks/useAnalytics'
 import { prettyDate } from '../../utils'

@@ -3,7 +3,7 @@ import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import Autocomplete from '@mui/material/Autocomplete'
 import Button from '@mui/material/Button'
-import Header from '../../components/Header'
+import Header from '../../components/header'
 import useAuth from '../../hooks/useAuth'
 import { prettyDate } from '../../utils'
 
