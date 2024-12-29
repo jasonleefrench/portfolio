@@ -42,13 +42,48 @@ export default async function handler(req, res) {
                 ? snapshot.docs[snapshot.docs.length - 1].id
                 : null
 
-            res.status(200).json({ projects, nextCursor })
+            return res.status(200).json({ projects, nextCursor })
         } catch (error) {
             console.error('Error fetching projects:', error)
-            res.status(500).json({ error: 'Internal Server Error' })
+            return res.status(500).json({ error: 'Internal Server Error' })
         }
-    } else {
-        res.setHeader('Allow', ['GET'])
-        res.status(405).end(`Method ${req.method} Not Allowed`)
     }
+
+    if (req.method === 'POST') {
+        const { title, kind, tags = [], timestamp, url } = req.body
+        const { authorization } = req.headers
+
+        if (!authorization || !authorization.startsWith('Bearer ')) {
+            return res
+                .status(401)
+                .json({ message: 'Unauthorized: Missing or invalid token' })
+        }
+
+        const token = authorization.split('Bearer ')[1]
+
+        try {
+            await admin.auth().verifyIdToken(token)
+        } catch (e) {
+            return res
+                .status(401)
+                .json({ message: 'Unauthorized: Invalid token' })
+        }
+
+        try {
+            const docRef = await db.collection('projects').add({
+                title,
+                kind,
+                tags,
+                timestamp,
+                url,
+            })
+            return res.status(201).json({ ok: true, id: docRef.id })
+        } catch (error) {
+            console.error('Error creating project:', error)
+            return res.status(500).json({ error: 'Internal Server Error' })
+        }
+    }
+
+    res.setHeader('Allow', ['GET', 'POST'])
+    res.status(405).end(`Method ${req.method} Not Allowed`)
 }

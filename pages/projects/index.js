@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from 'react'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import Link from 'next/link'
-import Header from '../../components/header'
+import Header from '../../components/Header'
 import loader from '../../components/loader'
 import useAnalytics from '../../hooks/useAnalytics'
 import { prettyDate } from '../../utils'
@@ -21,7 +21,6 @@ const Index = () => {
     const [projects, setProjects] = useState([])
     const [cursor, setCursor] = useState('')
     const [hasMore, setHasMore] = useState(true)
-    console.log(analytics)
     const update = useCallback(
         (data) => {
             setProjects((prev) => [...prev, ...data.projects])

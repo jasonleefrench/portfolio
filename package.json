@@ -10,6 +10,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^6.3.0",
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^2.13.0",
     "@sanity/image-url": "^0.140.22",
@@ -17,6 +20,7 @@
     "firebase": "^11.1.0",
     "firebase-admin": "^13.0.2",
     "groq": "^2.13.0",
+    "jsdom": "^25.0.1",
     "next": "^11.0.1",
     "next-videos": "^1.4.1",
     "react": "17.0.2",
