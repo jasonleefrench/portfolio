@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo, cloneElement } from 'react'
+import { useEffect, useState } from 'react'
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import Autocomplete from '@mui/material/Autocomplete'
@@ -17,13 +17,17 @@ const tags = [
     'election',
 ]
 
-const SignIn = ({ children }) => {
+const SignIn = ({ onSuccess }) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [signInWithEmailAndPassword, user, loading, error, checkedAuth] =
         useAuth()
 
-    const element = cloneElement(children, { user })
+    useEffect(() => {
+        if (user) {
+            onSuccess(user)
+        }
+    }, [user, onSuccess])
 
     if (!checkedAuth) {
         return <></>
@@ -41,13 +45,14 @@ const SignIn = ({ children }) => {
         return <p>Loading...</p>
     }
 
-    if (user) {
-        return <div>{element}</div>
-    }
-
     return (
         <div className="App">
-            <form>
+            <form
+                onSubmit={(e) => {
+                    e.preventDefault()
+                    signInWithEmailAndPassword(email, password)
+                }}
+            >
                 <TextField
                     id="email"
                     label="Email"
@@ -75,25 +80,27 @@ const SignIn = ({ children }) => {
 }
 
 const NewProject = () => {
+    const [user, setUser] = useState()
     return (
         <div className={'wrapper'}>
             <Header title={'Projects'} />
             <Box
-                component="form"
                 sx={{
                     '& .MuiTextField-root, & .MuiButton-root': {
                         my: 1,
                         mx: 'auto',
-                        display: 'inline-block',
-                        width: '50ch',
+                        display: 'block',
+                        width: 'auto',
                     },
                 }}
                 noValidate
                 autoComplete="off"
             >
-                <SignIn>
-                    <Form />
-                </SignIn>
+                {user ? (
+                    <Form user={user} />
+                ) : (
+                    <SignIn onSuccess={(user) => setUser(user)} />
+                )}
             </Box>
         </div>
     )
@@ -143,7 +150,7 @@ const Form = ({ user }) => {
     }
 
     return (
-        <>
+        <form onSubmit={handleSubmit}>
             <div>
                 <TextField
                     required
@@ -196,7 +203,7 @@ const Form = ({ user }) => {
             )}
             <input type="submit" hidden />
             {error && <p>{error}</p>}
-        </>
+        </form>
     )
 }
 
