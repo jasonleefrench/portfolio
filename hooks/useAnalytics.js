@@ -1,12 +1,14 @@
 import { useMemo } from 'react'
 import getFirebase from '../firebase'
-import { getAnalytics, logEvent } from 'firebase/analytics'
+import { getAnalytics, isSupported, logEvent } from 'firebase/analytics'
 
 const useAnalytics = () => {
     let analytics
     try {
         const app = getFirebase()
-        analytics = getAnalytics(app)
+        analytics = isSupported().then((yes) =>
+            yes ? getAnalytics(app) : null
+        )
     } catch (e) {
         console.error('Failed to initialize Firebase Analytics', e)
     }
