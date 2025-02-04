@@ -5,7 +5,7 @@
             "text": "<span>{Hello!}</span><span>My name is jason</span>"
         },
         "descriptions": [
-            "I'm a journalist/web developer/designer. I <del><a href='https://twitter.com/jasonleefrench'>tweet</a></del> <ins style='text-decoration: none;'><a href='https://bsky.app/profile/jasonleefren.ch'>bluesky</a></ins> classic Simpsons quotes and work as a graphics reporter at the <a href='https://twitter.com/WSJGraphics'>Wall Street Journal</a>. I craft clean code to build <a href='https://www.jasonleefren.ch/projects'>interactive graphics</a> and tools.",
+            "I'm a journalist/web developer/designer. I <del><a href='https://twitter.com/jasonleefrench'>tweet</a></del> <ins style='text-decoration: none;'><a href='https://bsky.app/profile/jasonleefren.ch'>bluesky</a></ins> classic Simpsons quotes and work as a graphics reporter at the <a href='https://www.wsj.com/'>Wall Street Journal</a>. I craft clean code to build <a href='https://www.jasonleefren.ch/projects'>interactive graphics</a> and tools.",
             "Telling stories is a blast!"
         ]
     },
