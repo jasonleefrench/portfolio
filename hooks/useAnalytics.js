@@ -1,23 +1,18 @@
-import { useEffect, useState, useMemo } from 'react'
+import { useMemo } from 'react'
 import getFirebase from '../firebase'
-import { getAnalytics, isSupported, logEvent } from 'firebase/analytics'
+import { getAnalytics, logEvent } from 'firebase/analytics'
 
 const useAnalytics = () => {
-    const [analytics, setAnalytics] = useState(null)
-    useEffect(() => {
+    let analytics
+    try {
         const app = getFirebase()
-        isSupported().then((yes) => {
-            if (yes) {
-                const analytics = getAnalytics(app)
-                setAnalytics(analytics)
-            }
-        })
-    }, [])
+        analytics = getAnalytics(app)
+    } catch (e) {
+        console.error('Failed to initialize Firebase Analytics', e)
+    }
     return useMemo(
         () =>
-            analytics
-                ? (tag, data) => logEvent(analytics, tag, data)
-                : () => {},
+            analytics ? (tag, data) => logEvent(analytics, tag, data) : null,
         [analytics]
     )
 }
