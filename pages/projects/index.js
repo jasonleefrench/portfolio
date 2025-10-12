@@ -7,6 +7,7 @@ import GOL from '../../components/GOL'
 import useAnalytics from '../../hooks/useAnalytics'
 import { prettyDate } from '../../utils'
 import Konami from '../../components/Konami'
+import flatProjectsData from '../../data/projects'
 
 const tagColors = {
     quiz: '#e74c3c',
@@ -169,6 +170,10 @@ const Index = () => {
 }
 
 const getData = async (callback, cursor = '', isAll = false) => {
+    if (!isAll) {
+        console.log('returning flat')
+        return callback(flatProjectsData)
+    }
     const res = await fetch(`/api/projects?lastDocId=${cursor}&isAll=${isAll}`)
     const json = await res.json()
     callback(json)
