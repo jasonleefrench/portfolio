@@ -29,7 +29,14 @@ const Index = () => {
 
     const update = useCallback(
         (data) => {
-            setProjects((prev) => [...prev, ...data.projects])
+            setProjects((prev) => {
+                const projectMap = new Map()
+                prev.forEach((project) => projectMap.set(project.id, project))
+                data.projects.forEach((project) =>
+                    projectMap.set(project.id, project)
+                )
+                return Array.from(projectMap.values())
+            })
             setCursor(data.nextCursor)
             setHasMore(!!data.nextCursor)
             analytics('projects_scroll', {
