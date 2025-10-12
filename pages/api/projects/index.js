@@ -18,13 +18,18 @@ const db = admin.firestore()
 export default async function handler(req, res) {
     if (req.method === 'GET') {
         // Handle GET /api/projects with pagination
-        const { limit = 10, lastDocId } = req.query
+        const { limit = 10, lastDocId, isAll = false } = req.query
 
         try {
             let query = db
                 .collection('projects')
                 .orderBy('timestamp', 'desc')
                 .limit(Number(limit))
+
+            if (isAll !== 'true') {
+                query = query.where('has_image', '==', true)
+            }
+
             if (lastDocId) {
                 const lastDoc = await db
                     .collection('projects')
