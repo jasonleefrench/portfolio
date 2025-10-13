@@ -171,7 +171,6 @@ const Index = () => {
 
 const getData = async (callback, cursor = '', isAll = false) => {
     if (!isAll) {
-        console.log('returning flat')
         return callback(flatProjectsData)
     }
     const res = await fetch(`/api/projects?lastDocId=${cursor}&isAll=${isAll}`)
