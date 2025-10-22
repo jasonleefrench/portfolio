@@ -64,7 +64,7 @@
             "title": "Abortion Is on the Ballot in Five States in Midterm Elections",
             "url": "https://www.wsj.com/articles/abortion-is-on-the-ballot-in-five-states-in-midterm-elections-11667921098?st=jHczkB&reflink=desktopwebshare_permalink",
             "has_image": true,
-            "description": "<p>In the 2022 midterms, five states held abortion-related ballot initiatives, each with distinct legal language</p>\n\n<p>We built a live dashboard to track them as votes came in. Each state could be explored independently, but the layout encouraged readers to take a broader view of national sentiment.</p>\n\n<p>It was designed to be a calm visual system, built to handle the speed and volatility of election night.</p>"
+            "description": "<p>In the 2022 midterms, five states held abortion-related ballot initiatives, each with distinct legal language.</p>\n\n<p>We built a live dashboard to track them as votes came in. Each state could be explored independently, but the layout encouraged readers to take a broader view of national sentiment.</p>\n\n<p>It was designed to be a calm visual system, built to handle the speed and volatility of election night.</p>"
         }
     ]
 }
