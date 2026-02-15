@@ -25,7 +25,9 @@ const Index = () => {
     const [projects, setProjects] = useState([])
     const [cursor, setCursor] = useState('')
     const [hasMore, setHasMore] = useState(true)
-    const [seeAll, setSeeAll] = useState(false)
+    const [seeAll, setSeeAll] = useState(
+        typeof window !== 'undefined' && window.location.search.includes('all'),
+    )
     const [golIsActive, setGolIsActive] = useState(false)
     const container = useRef(null)
 
@@ -47,6 +49,14 @@ const Index = () => {
         },
         [analytics],
     )
+
+    useEffect(() => {
+        history.replaceState(
+            null,
+            '',
+            seeAll ? '?all' : window.location.pathname,
+        )
+    }, [seeAll])
 
     useEffect(() => {
         setProjects([])
