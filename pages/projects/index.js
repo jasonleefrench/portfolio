@@ -11,7 +11,8 @@ import flatProjectsData from '../../data/projects'
 
 const tagColors = {
     quiz: '#e74c3c',
-    presentation: '#2ecc71',
+    mechanics: '#2ecc71',
+    design: '#dc7300',
     data: '#f1c40f',
     whimsy: '#8e44ad',
     live: '#2c3e50',
@@ -34,7 +35,7 @@ const Index = () => {
                 const projectMap = new Map()
                 prev.forEach((project) => projectMap.set(project.id, project))
                 data.projects.forEach((project) =>
-                    projectMap.set(project.id, project)
+                    projectMap.set(project.id, project),
                 )
                 return Array.from(projectMap.values())
             })
@@ -44,7 +45,7 @@ const Index = () => {
                 nextCursor: data.nextCursor,
             })
         },
-        [analytics]
+        [analytics],
     )
 
     useEffect(() => {
@@ -104,7 +105,7 @@ const Index = () => {
                                         tags = [],
                                         has_image,
                                     },
-                                    i
+                                    i,
                                 ) =>
                                     title && (
                                         <li
@@ -126,7 +127,7 @@ const Index = () => {
                                                 </Link>
                                                 {tags
                                                     .sort((a, b) =>
-                                                        a.localeCompare(b)
+                                                        a.localeCompare(b),
                                                     )
                                                     .map((tag) => (
                                                         <span
@@ -156,7 +157,7 @@ const Index = () => {
                                                 />
                                             )}
                                         </li>
-                                    )
+                                    ),
                             )}
                     </InfiniteScroll>
                 </ul>
